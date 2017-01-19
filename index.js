@@ -2,7 +2,7 @@
 if (!String.prototype.sprintf) {
 	String.prototype.sprintf = function () {
 		var args = Array.prototype.slice.call(arguments);
-		return this.replace(/%s/g, function() { return args.shift();});
+		return this.replace(/%\w\b/g, function() { return args.shift();});
 	};
 }
 
